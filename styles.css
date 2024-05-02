@@ -6,13 +6,11 @@
 }
 
 .container{
+    height: 100vh;
+    width: 100vw;
     display: grid;
     grid-template-columns: 1fr 4fr;
-}
-.header {
-    background-color: white;
-    grid-column: 2/3;
-    margin-left: 25px;
+    grid-template-rows: 1fr 4fr;
 }
 
 .topNav {
@@ -70,7 +68,7 @@ div.sideContent {
     font-size: 1.45rem;
 }
 
-svg {
+svg, .icon {
     width: 30px;
     color: white;
 }
@@ -80,41 +78,139 @@ svg.blksvg {
 }
 
 main {
-    background-color: gray;
+    background-color: #e2e8f0;
+    border: 1px solid black;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-
-main .projectCards {
-    grid-column: 1/2;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 1rem;
-    margin-left: 25px;
-    height: 300px;
-    
-}
-
-main .projectCards .card {
-    background-color: white;
-    border-radius: 5px;
-    border-left: 10px solid yellow;
-    padding: 20px;
+    place-items: center;
+    padding: 2rem 1rem;    
    
 }
 
-main .feed {
+main .Cards {
+    grid-row: 2;
     display: grid;
-    grid-template-columns: 1fr;
-    margin-left: 15px;
+    
+    grid-template-rows: 1fr 8fr 1fr 3fr 2fr 3fr 1fr 8fr;
+    grid-template-columns: repeat(2, 1fr) 0.75fr;
+    grid-template-areas: 
+    "project-header . announcements-header"
+    "super-cool-project less-cool-project announcement-card"
+    ". . announcement-card"
+    "impossible easy-app announcement-card"
+    "impossible easy-app trending-header"
+    "impossible easy-app trending-card"
+    ". . trending-card"
+    "ad-blocker money-maker trending-card"
+    ;
+    gap: 1rem;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    
 }
 
-.feed .announcementContainer, .trendingContainer {
+.card{
     background-color: white;
-    padding: 30px;
+    padding: 15px;
 }
 
-.feed .announcementContainer .content{
-    border-bottom: 1px solid gray;
+.projects {
+    
+    grid-area: project-header;
 }
+
+.announcements{
+    grid-area: announcements-header;
+}
+
+
+
+.super-cool{
+    grid-area: super-cool-project;
+}
+
+.less-cool{
+    grid-area: less-cool-project;
+}
+
+.announcement-card {
+    grid-area: announcement-card;
+    overflow: auto;
+    
+}
+
+.impossible-app{
+    grid-area: impossible;
+}
+.ad-blocker{
+    grid-area: ad-blocker;
+}
+.easy-peasy{
+    grid-area: easy-app;
+}
+
+.money-maker{
+    grid-area: money-maker;
+}
+
+h2.header{
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.card {
+    
+    border-radius: 10px;
+}
+
+div.Cards > div.col-1, div.Cards > div.col-2 {
+    border-left: 10px solid #fca5a5;
+}
+
+div.cardIcons {
+    display: flex;
+    justify-content: end;
+    
+}
+
+div.cardIcons > img:nth-child(2) {
+    margin: 0 10px 0 10px;
+}
+.trending-header{
+    grid-area: trending-header;
+}
+.trending-card{
+    grid-area: trending-card;
+    grid-row:6/9;
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr 3fr;
+    padding: 25px 5px;
+   column-gap: 25px;
+    
+}
+.trending-card > img {
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 40px;
+    justify-self: end;
+    
+}
+
+.happy{
+    grid-row: 4;
+}
+
+.panda {
+    grid-row: 3;
+}
+
+.skull{
+    grid-row: 2;
+}
+
+p.tagline{
+    margin: 0;
+}
+
+
+
+
