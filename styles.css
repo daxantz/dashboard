@@ -3,6 +3,8 @@
 *{
     box-sizing:border-box;
     font-family: "Manrope", sans-serif;
+    
+    padding: 0;
 }
 
 .container{
@@ -13,21 +15,84 @@
     grid-template-rows: 1fr 4fr;
 }
 
-.topNav {
-    display: flex;
-    justify-content: space-evenly
+.header{
+    display: grid;
+    grid-template-rows: 35% 65%;
+}
+
+.header > .topNav {
+    display: grid;
+    grid-template-columns: 7fr 2fr;
 }
 
 .search {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    align-items: center;
+    column-gap: 1px;
+}
+
+.search > svg {
+    justify-self: end;
+}
+
+.search > input {
+    width: 85%;
+    background-color: #e2e8f0;
+    border-radius: 50px;
+    height: 30px;
+}
+
+
+
+.header > .topNav > .accountInfo {
+   
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 3fr;
+    align-items: center;
+}
+
+.header div > img {
+    width: 40px;
+    border-radius: 50px;
+}
+
+.bottomNav {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1.75fr;
+}
+
+.bottomNav div:first-child {
+    
+    display: grid;
+    grid-template-columns:1fr 3fr ;
+}
+
+.bottomNav div:first-child > img {
+    align-self: center;
+    justify-self: center;
+    width: 50px;
+}
+
+div.btns{
+    grid-column: 3;
     display: flex;
-    border: 1px solid red;
-    width: 75%;
+    
+    
+    align-self: center;
+    
     
 }
 
-.search input {
-    width: 100%;
-    height: 35px;
+button{
+    background-color: #84cc16;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 15px 10px 15px;
+    margin-right: 1rem;
+    width: 5rem;
+    color: white;
+    font-weight: bolder;
 }
 
 
@@ -39,11 +104,13 @@
 
 .sidebar{
     display: grid;
-    background-color: #fca5a5;
+    background-color: #84cc16;
+    grid-template-rows: 1fr 4fr 4fr;
     grid-column: 1/2;
     grid-row: 1/3;
     color: white;
     height: 100vh;
+    row-gap: 100px;
     
 }
 
@@ -60,7 +127,7 @@ div.sideContent {
 
 .sidebar > .settings {
     margin-top: 16px;
-    border: 1px solid black;
+    
     
 }
 
@@ -112,6 +179,7 @@ main .Cards {
 .card{
     background-color: white;
     padding: 15px;
+    overflow: auto;
 }
 
 .projects {
@@ -163,7 +231,7 @@ h2.header{
 }
 
 div.Cards > div.col-1, div.Cards > div.col-2 {
-    border-left: 10px solid #fca5a5;
+    border-left: 10px solid #6a6d70;
 }
 
 div.cardIcons {
